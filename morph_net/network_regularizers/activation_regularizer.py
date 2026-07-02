@@ -68,7 +68,7 @@ class GammaActivationRegularizer(generic_regularizers.NetworkRegularizer):
     self._manager = orm.OpRegularizerManager(
         output_boundary,
         op_handler_dict,
-        input_boundary=input_boundary,
+        input_boundary=input_boundary,  # pyrefly: ignore[bad-argument-type]
         force_group=force_group,
         regularizer_blacklist=regularizer_blacklist)
     self._calculator = cost_calculator.CostCalculator(
@@ -153,7 +153,7 @@ class GroupLassoActivationRegularizer(generic_regularizers.NetworkRegularizer):
     self._manager = orm.OpRegularizerManager(
         output_boundary,
         op_handler_dict,
-        input_boundary=input_boundary,
+        input_boundary=input_boundary,  # pyrefly: ignore[bad-argument-type]
         force_group=force_group,
         regularizer_blacklist=regularizer_blacklist)
     self._calculator = cost_calculator.CostCalculator(

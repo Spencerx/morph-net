@@ -76,7 +76,7 @@ class LogisticSigmoidRegularizer(generic_regularizers.NetworkRegularizer):
         output_boundary,
         op_handler_dict,
         create_grouping_regularizer=pgr.ProbabilisticGroupingRegularizer,
-        input_boundary=input_boundary,
+        input_boundary=input_boundary,  # pyrefly: ignore[bad-argument-type]
         force_group=force_group,
         regularizer_blacklist=regularizer_blacklist)
     self._calculator = self.get_calculator()

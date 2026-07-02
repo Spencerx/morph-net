@@ -151,7 +151,7 @@ class GammaLatencyRegularizer(generic_regularizers.NetworkRegularizer):
     })
 
     self._manager = orm.OpRegularizerManager(
-        output_boundary, op_handler_dict, input_boundary=input_boundary,
+        output_boundary, op_handler_dict, input_boundary=input_boundary,  # pyrefly: ignore[bad-argument-type]
         force_group=force_group, regularizer_blacklist=regularizer_blacklist)
     self._calculator = cost_calculator.CostCalculator(
         self._manager,
@@ -229,7 +229,7 @@ class GroupLassoLatencyRegularizer(generic_regularizers.NetworkRegularizer):
     }
     if regularizer_decorator:
       for key in custom_handlers:
-        custom_handlers[key] = op_handler_decorator.OpHandlerDecorator(
+        custom_handlers[key] = op_handler_decorator.OpHandlerDecorator(  # pyrefly: ignore[unsupported-operation]
             custom_handlers[key], regularizer_decorator, decorator_parameters)
 
     op_handler_dict = op_handlers.get_group_lasso_op_handler_dict()
@@ -238,7 +238,7 @@ class GroupLassoLatencyRegularizer(generic_regularizers.NetworkRegularizer):
     self._manager = orm.OpRegularizerManager(
         output_boundary,
         op_handler_dict,
-        input_boundary=input_boundary,
+        input_boundary=input_boundary,  # pyrefly: ignore[bad-argument-type]
         force_group=force_group,
         regularizer_blacklist=regularizer_blacklist)
     self._calculator = cost_calculator.CostCalculator(
